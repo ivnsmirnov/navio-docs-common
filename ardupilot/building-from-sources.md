@@ -1,5 +1,3 @@
-![](http://www.emlid.com/wp-content/uploads/2014/10/ArduPilot.png)
-
 #### Where to get the code
 
 Navio2 is supported in the upstream [ArduPilot repository](https://github.com/ArduPilot/ardupilot).
