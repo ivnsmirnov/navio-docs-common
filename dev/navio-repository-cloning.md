@@ -1,9 +1,16 @@
-**Downloading drivers and examples for Navio2**
+**Downloading drivers and examples**
 
-Clone our repository to get access to Navio2 examples:
+Clone our repository to get access to examples:
 ```bash
 git clone https://github.com/emlid/Navio2.git
 cd Navio2
+```  
+
+For Navio+ this is essentially the same: 
+
+```bash
+git clone https://github.com/emlid/Navio.git
+cd Navio
 ```  
 
 **Repository structure**
