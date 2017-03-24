@@ -50,6 +50,14 @@ This method may be problematic because some keyboards are not compatible with th
 
 You can connect to Raspberry Pi over Ethernet by plugging it using Ethernet cable to a switch, router or directly to your computer.
 
+**Trying to connect using Zeroconf**
+
+There's a pretty good chance you'll be able to ssh into your Raspberry Pi using Zeroconf.
+
+You can try either ```ssh pi@navio.local``` on Mac or Linux or type navio.local in Putty on Windows.
+
+If that doesn't work out for you, read a section below.
+
 **Finding an IP address**
 
 To find an IP address of your Raspberry Pi use nmap utility.
