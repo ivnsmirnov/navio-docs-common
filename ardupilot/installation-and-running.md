@@ -70,7 +70,7 @@ We use `update-alternatives` utility for the binary selection. This utility main
 In the example below we'll use arducopter but it could've been just as well arduplane or ardurover.
 
 ```bash
-pi@navio: ~ sudo update-alternatives --config arducopter`
+pi@navio: ~ sudo update-alternatives --config arducopter
 ```
 
 This will produce the output like this:
@@ -147,7 +147,6 @@ Mapping between switches and serial ports (TCP or UDP can be used instead of ser
 Additionally take a look at [list of serial parameters](http://ardupilot.org/copter/docs/parameters.html?highlight=serial#serial-parameters) for Mission Planner.
 
 When using UART for telemetry please keep in mind that serial ports have default baud rates.   
-3DR Radios are configured for 57600 by default, so the simplest way to connect over them is to run with -C option.
 
 
 #### Reload configuration
