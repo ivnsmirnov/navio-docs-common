@@ -1,8 +1,8 @@
-#### Where to get the code
+## Where to get the code
 
 Navio2 is supported in the upstream [ArduPilot repository](https://github.com/ArduPilot/ardupilot).
 
-#### How to build
+## How to build
 
 ArduPilot binary for can be built using two ways:
 
@@ -12,7 +12,7 @@ ArduPilot binary for can be built using two ways:
 
 If you'd like to build on Raspberry Pi skip the next step.
 
-#### Cross-compiler setup on Linux (optional)
+## Cross-compiler setup on Linux (optional)
 
 Recommended compiler is the one that is provided by Raspberry Pi Foundation. Download and extract it somewhere, for example in /opt/:
 
@@ -34,7 +34,7 @@ export PATH=/opt/tools/arm-bcm2708/gcc-linaro-arm-linux-gnueabihf-raspbian-x64/b
 
 If you would like to add the compiler to the PATH permanently edit /etc/environment.
 
-#### Building ArduPilot using Waf build system
+## Building ArduPilot using Waf build system
 
 These steps are the same both for compiling ArduPilot directly on Raspberry Pi and cross-compiling.
 

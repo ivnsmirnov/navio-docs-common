@@ -1,8 +1,8 @@
-#### Overview
+## Overview
 
 You can run ArduPilot on Raspberry Pi 3 or 2 with Navio. The autopilot's code works directly on Raspberry Pi. For ArduPilot to work properly please use the configured Raspbian distribution that we provide.  
 
-#### Current vehicle versions
+## Current vehicle versions
 
 Emlid Raspbian has preinstalled ArduPilot. It includes all vehicles and is based on the most stable branch available. Currently these are:
 
@@ -10,7 +10,7 @@ Emlid Raspbian has preinstalled ArduPilot. It includes all vehicles and is based
 * ArduRover: **3.1.2**
 * ArduCopter: **3.4.6**
 
-#### Greeting
+## Greeting
 
 Once you ssh into Raspberry Pi you'll be greated with a message that looks like this:
 
@@ -52,7 +52,7 @@ To disable ArduPilot on boot:
 
 We'll guide you through what's going on under the hood in the sections below.
 
-#### Systemd
+## Systemd
 
 For launching ArduPilot we are using `systemd` init system which provides manager for all services and processes. 
 The main command used to control systemd is `systemctl`. Some of its uses are:
@@ -62,7 +62,7 @@ The main command used to control systemd is `systemctl`. Some of its uses are:
 
 See `man systemctl` for more details.
 
-#### Choosing a vehicle, version and board
+## Choosing a vehicle, version and board
 
 All of the ArduPilot binaries are installed to /opt/ardupilot/ardu[vehicle]-[ap_major_version]/bin
 We use `update-alternatives` utility for the binary selection. This utility maintains symlinks to /usr/bin/arducopter, /usr/bin/arduplane and /usr/bin/ardurover.
@@ -98,7 +98,7 @@ The first line shows the vehicle that is launched by default. If you want to sel
 For example, in case you build a quad on Navio 2 and want to use ArduCopter-3.4 you will need to type 15 and then press enter.
 
 
-#### Specifying launching options
+## Specifying launching options
  
 Open the file:
 
@@ -149,7 +149,7 @@ Additionally take a look at [list of serial parameters](http://ardupilot.org/cop
 When using UART for telemetry please keep in mind that serial ports have default baud rates.   
 
 
-#### Reload configuration
+## Reload configuration
 
 If you changed something in the previous step you need to reload configuration for systemd to work properly.
 
@@ -157,7 +157,7 @@ If you changed something in the previous step you need to reload configuration f
 pi@navio: ~ $ sudo systemctl daemon-reload
 ```
 
-#### Starting
+## Starting
 
 Now you can start ArduPilot:
 
@@ -171,7 +171,7 @@ To stop the service run:
 pi@navio: ~ $ sudo systemctl stop arducopter
 ```
 
-#### Autostarting on boot
+## Autostarting on boot
 
 To automatically start ArduPilot on boot you need to enable `arducopter`:
 
@@ -190,24 +190,24 @@ pi@navio: ~ $ systemctl is-enabled arducopter
 ```
 
 
-#### Connecting to the GCS
+## Connecting to the GCS
 
-**Mission Planner**
+### Mission Planner
 
 A Windows only ground station. It is the most feature complete, though.
 
-**QGroundControl**
+### QGroundControl
 
 A crossplatform ground station for Mavlink-based flight stacks (like Ardupilot).
 
-**APM Planner**
+### APM Planner
 
 APM Planner is a ground station software for ArduPilot. It can be downloaded from the
 [ardupilot.com](http://ardupilot.com/downloads/?category=35)
 
 APM Planner listens on UDP port 14550, so it should catch telemetry from the drone automatically.
 
-**MAVProxy**
+### MAVProxy
 
 MAVProxy is a console-oriented ground station software written in Python. It’s well suited for advanced users and developers.
 
@@ -222,7 +222,7 @@ pi@navio: ~ $ mavproxy.py --master 192.168.1.2:14550 --console
 
 Where 192.168.1.2 is the IP address of the GCS, not RPi.
 
-#### Launching a custom ArduPilot binary
+## Launching a custom ArduPilot binary
 
 Navio is supported in ArduPilot upstream and if you'd like to build the binary yourself please proceed to the [Building from sources](building-from-sources.md). Also you can download the latest stable binary files from ArduPilot buildserver. To download arducopter-quad binary:
 

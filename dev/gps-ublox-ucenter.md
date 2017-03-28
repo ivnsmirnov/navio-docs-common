@@ -1,4 +1,4 @@
-**Connecting with U-center**
+### Connecting with U-center
 
 ![ucenter](http://www.emlid.com/wp-content/uploads/2014/10/U-center.png)
 It is possible to connect to Navio's onboard u-blox GPS module from u-center software. To do that ublox-spi-to-tcp application has to be run on Raspberry:

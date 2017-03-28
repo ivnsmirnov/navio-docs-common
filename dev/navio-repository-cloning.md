@@ -1,4 +1,4 @@
-**Downloading drivers and examples**
+## Downloading drivers and examples
 
 Clone our repository to get access to examples:
 ```bash
@@ -13,9 +13,9 @@ git clone https://github.com/emlid/Navio.git
 cd Navio
 ```  
 
-**Repository structure**
+## Repository structure
 
-***C++:***
+### C++
 
 *- Examples*
 
@@ -41,7 +41,7 @@ C++ drivers for Navio's onboard devices and peripheral interfaces.
 * I2C driver
 * SPI driver
 
-***Python:***
+### Python
 
 Basic examples showing how to work with Navio's onboard devices using Python.
 
@@ -53,7 +53,7 @@ Basic examples showing how to work with Navio's onboard devices using Python.
 * RCInput
 * Servo
 
-***Utilities:***
+### Utilities
 
 Applications and utilities for Navio2.
 

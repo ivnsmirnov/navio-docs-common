@@ -1,10 +1,10 @@
-#### Downloading configured Raspbian image
+## Downloading configured Raspbian image
 
 Navio requires a preconfigured Raspbian to run. We provide a unified SD card image for Raspberry Pi 2 and 3. The OS is headless, i.e. it comes without GUI as it is not required for drone applications.
 
 [Emlid Raspbian Image](https://files.emlid.com/images/emlid-raspbian-20160718.img.xz), [(md5)](https://files.emlid.com/images/MD5SUMS)
 
-#### Writing image to SD card
+## Writing image to SD card
 
 * Get the latest Emlid Raspbian Image.
 * Download, extract and run [Etcher](https://etcher.io/) with administrator rights.
@@ -15,7 +15,7 @@ Navio requires a preconfigured Raspbian to run. We provide a unified SD card ima
 
 More detailed instructions are available [here](http://www.raspberrypi.org/documentation/installation/installing-images/).
 
-#### Configuring Wi-Fi access
+## Configuring Wi-Fi access
 
 Raspberry Pi3 has an internal Wi-Fi module, while Raspberry Pi2 requires an external USB Wi-Fi dongle. An extensive list of supported dongles is available [here](http://elinux.org/RPi_USB_Wi-Fi_Adapters).
 
@@ -31,11 +31,11 @@ network={
 
 To get access to this file use one of the following methods:
 
-**Edit configuration on SD card**
+### Edit configuration on SD card
 
 Simply plug an SD card in your computer. After getting access to SD card contents, open /boot/wpa_supplicant.conf (with root privileges on Linux) and edit the file as described above.
 
-**Use monitor and keyboard**
+### Use monitor and keyboard
 
 Connect HDMI monitor and USB keyboard to your Raspberry, power it up and you will get access to the console, where you can use text editor to modify wpa_supplicant. After logging into the system, type:
 
@@ -46,11 +46,11 @@ sudo nano /boot/wpa_supplicant.conf
 Modify the file as described above, save it and reboot.
 This method may be problematic because some keyboards are not compatible with this kernel. If your keyboard does not work, try another one or use another method.
 
-**Use ethernet**
+### Use ethernet
 
 You can connect to Raspberry Pi over Ethernet by plugging it using Ethernet cable to a switch, router or directly to your computer.
 
-**Trying to connect using Zeroconf**
+### Trying to connect using Zeroconf
 
 There's a pretty good chance you'll be able to ssh into your Raspberry Pi using Zeroconf.
 
@@ -58,7 +58,7 @@ You can try either ```ssh pi@navio.local``` on Mac or Linux or type navio.local 
 
 If that doesn't work out for you, read a section below.
 
-**Finding an IP address**
+### Finding an IP address
 
 To find an IP address of your Raspberry Pi use nmap utility.
 
@@ -69,13 +69,13 @@ You can use it with a GUI such as Zenmap or Fing application on your phone.
 
 Look for the hostname ”navio”.
 
-**wpa_passphrase on Linux**
+### wpa_passphrase on Linux
 
 If you edit the file on a Raspberry or on a Linux computer you can populate **wpa_supplicant.conf** with a utility called **wpa_passphrase** like this:
 
 ```sudo bash -c "wpa_passphrase SSID password >> /boot/wpa_supplicant.conf```
 
-#### Upgrading
+## Upgrading
 
 If required you can now upgrade your system by running:
 

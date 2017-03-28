@@ -1,12 +1,12 @@
-#### Overview
+## Overview
 
 We use a conventional Debian scheme to upgrade software, i.e. using **APT**.
 
-#### General warnings
+## General warnings
 
 Please, backup your parameters before proceeding!
 
-#### Upgrade
+## Upgrade
 
 ```bash
 pi@navio: ~ $ sudo apt-get update && sudo apt-get dist-upgrade
@@ -15,6 +15,6 @@ pi@navio: ~ $ sudo apt-get update && sudo apt-get dist-upgrade
 
 Read the warning once more and please obey the instructions!
 
-#### Final thoughts
+## Final thoughts
 
 If this tutorial is confusing in any way, please let us now! We'd be glad to help you out and fix the instructions accordingly.

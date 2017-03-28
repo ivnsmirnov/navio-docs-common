@@ -1,8 +1,8 @@
-**Wi-Fi broadcast**
+## Wi-Fi broadcast
 
 Emlid Raspbian images comes with pre-installed WBC.
 
-#### What is Wi-Fi broadcast?
+### What is Wi-Fi broadcast?
 
 Wifibroadcast is a project aimed at the live transmission of HD video (and other) data using wifi radios.
 One prominent use case is to transmit camera images for a first person view (FPV) of remote controlled aircrafts.
@@ -13,7 +13,7 @@ Wifibroadcast puts the wifi cards into monitor mode. This mode allows to send an
 without association between devices. Additionally, it is also possible to receive erroneous frames (where the checksum does not
 match).
 
-#### Overview
+### Overview
 
 
 Transmitter hardware configuration:
@@ -28,12 +28,12 @@ Receiver hardware configuration:
 * Wi-Fi card *compatible with wifibroadcast*
 * Display
 
-#### Wi-Fi cards
+### Wi-Fi cards
 
 Not all wifi cards are compatible with wifibroadcast. This is because wifibroadcast uses injection mode which
 not fully supported by many wifi chipsets.
 
-**2.4GHz**
+#### 2.4GHz
 
 ATHEROS AR9172 delivers good performance under wifibroadcast for 2.4GHz.
 Recommended dongles:
@@ -43,7 +43,7 @@ Recommended dongles:
 
 You can find a list of wifi cards using  this chip [here](https://wikidevi.com/wiki/Atheros_AR9271).
 
-**5GHz**
+#### 5GHz
 
 For 5GHz operation Ralink RT5572 based devices are recommended since they work out of the box.
 Recommended dongles:
@@ -55,7 +55,7 @@ Recommended dongles:
 
 For more cards refer to [here](https://wikidevi.com/wiki/Ralink_RT5572).
 
-#### Powering
+### Powering
 
 **Transmitter**
 
@@ -67,9 +67,9 @@ power to the Raspberry Pi.
 Connect 5V 1A power adapter to the Raspberry Pi’s microUSB port. Please do not power it
 from laptop USB port.
 
-### How to get your hands on: step by step
+## How to get your hands on: step by step
 
-#### Configuration 
+### Configuration 
 
 Wi-Fi broadcast settings are stored in  ```/etc/default/wbc```.
 
@@ -107,14 +107,14 @@ PORT=0
 
 Make changes in this file if you need to adjust broadcast seettings.
 
-#### Receiver setup
+### Receiver setup
 
 To start broadcast on receiver:
 ```bash
 sudo systemctl start wbcrxd
 ```
 
-#### Transmitter setup
+### Transmitter setup
 
 To start broadcast on transmitter:
 ```bash

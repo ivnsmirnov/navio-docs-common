@@ -1,13 +1,13 @@
 
 Navio features NEO-M8N in Navio+ and Navio2. Full tech specs are available at the official [product page](http://www.u-blox.com/en/gps-modules/pvt-modules.html). These GPS modules are connected over SPI and send messages, containing location information and receive messages with configuration data.
 
-**U-blox NEO example**
+## U-blox NEO example
 
 This example is designed to show an easy way to capture and decode UBX protocol messages. For simplicity, it only parses UBX protocol NAV-STATUS and NAV-POSLLH messages. NAV-POSLLH details, as well as full UBX protocol description can be seen [here](http://www.u-blox.com/images/downloads/Product_Docs/u-blox6_ReceiverDescriptionProtocolSpec_%28GPS.G6-SW-10018%29.pdf). The output of the example data is: current GPS status, current longitude and latitude, current height above Ellipsoid, current height above mean sea level, vertical and horizontal accuracy estimate and the iTOW parameter. iTOW is the current millisecond time of week.
 
 If you haven't already done that, download drivers and examples code [here](navio-repository-cloning/).
 
-***C++***  
+### C++
 Move to the folder C++/Examples/GPS, compile and run the example.
 ```bash
 cd C++/Examples/GPS
@@ -15,7 +15,7 @@ make
 ./gps
 ```
 
-***Python***  
+### Python
 Move to the folder with the source code and run the example:
 ```bash
 cd Python

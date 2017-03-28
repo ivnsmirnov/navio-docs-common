@@ -1,8 +1,8 @@
-**MS5611 example**
+## MS5611 example
 
 If you haven't already done that, download drivers and examples code [here](navio-repository-cloning/).
 
-***C++***
+### C++
 
 Move to the folder with the source code, compile and run the example:
 
@@ -12,7 +12,7 @@ make
 ./Barometer
 ```
 
-***Python***
+### Python
 
 Move to the folder with the code and run the example:
 

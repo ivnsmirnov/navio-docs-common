@@ -1,4 +1,4 @@
-##Navio Raspbian changelog
+## Navio Raspbian changelog
 
 *2017-03-11:*
 
@@ -60,7 +60,7 @@ rcio.dtbo could get not regenerated for newer kernels. The latter is now part of
 - Moved image snapshot closer to upstream
 - Updated rcio-dkms to 0.6
 
-##Navio ArduPilot changelog
+## Navio ArduPilot changelog
 
 #ArduCopter
 
@@ -105,7 +105,7 @@ rcio.dtbo could get not regenerated for newer kernels. The latter is now part of
 
 - Include all supported frames
 
-##RCIO kernel module
+## RCIO kernel module
 
 *0.6.4:*
 

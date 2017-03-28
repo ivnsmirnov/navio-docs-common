@@ -1,13 +1,14 @@
-**ROS**
+## ROS
 
 Emlid Raspbian images comes with pre-installed ROS.
-### Basic understanding
 
-#### What is ROS?
+## Basic understanding
+
+### What is ROS?
 
 Robot Operating System is an endeavor of thousands of roboticists around the globe to make development of new robots easier. ROS is an open source project which includes a ton of useful tools and that makes developing process more efficient. The idea is that you don't have to redesign the wheel every time. Someone else has already done that, and they've probably done it better than you, so you can focus your energy on specific part you want to build.
 
-#### Overview
+### Overview
 
 Here we will look at general scheme of ROS incorporated in Emlid Raspbian. Firstly we will give a general concept of ROS and then do everything step by step to get started promptly with some basic understanding.
 
@@ -26,8 +27,8 @@ Let's take into consideration that we usually run ROS alongside ardupilot. For y
 To make things clear let's proceed to step-by-step ROS running practical instructions which will help to perceive acquired knowledge.
 
 
-### How to get your hands on: step by step
-#### ROS setup
+## How to get your hands on: step by step
+### ROS setup
 
 ROS needs a little setup before running. Namely, this boils down to [sourcing](http://superuser.com/questions/176783/what-is-the-difference-between-executing-a-bash-script-and-sourcing-a-bash-scrip) a special script provided in /opt/:
 
@@ -38,7 +39,7 @@ A command above will make bash execute a ROS setup on every log in by appending 
 
 Start watching the tutorial on <a href="https://asciinema.org/a/1i915k6h2b0i9sf02mwom7qu8?t=0" target="_blank">asciinema.org</a>.
 
-#### Introduction to tmux
+### Introduction to tmux
 You'll need to ```ssh``` into your Raspberry Pi from several terminals simulteneously. That's why we recommend using a *terminal multiplexer* like [tmux](https://tmux.github.io/).
 For operating tmux while working with ROS you have to learn some basics. 
 
@@ -71,7 +72,7 @@ Useful shortcuts:
 For further information please refer to this [tutorial](https://danielmiessler.com/study/tmux/#basics).
 
 
-### Preparing terminal
+## Preparing terminal
 Create a tmux session called "ros"
 
 ```bash
@@ -86,7 +87,7 @@ We recommend you to take your time and practice to navigate between panes in an 
 Continue <a href="https://asciinema.org/a/1i915k6h2b0i9sf02mwom7qu8?t=22" target="_blank">watching the tutorial</a> for this step.
 
 
-#### Running roscore
+### Running roscore
 
 Now it's time to start ROS Master. Select top-left (doesn't matter which one actually) pane and run ```roscore```
 
@@ -101,7 +102,7 @@ Continue <a href="https://asciinema.org/a/1i915k6h2b0i9sf02mwom7qu8?t=59" target
 
 ```roscore``` is a backbone of ROS. It's the first thing you should run when using ROS because it's vital for successful node execution and making publisher-subscriber architecture work.
 
-#### Running ardupilot
+### Running ardupilot
 
 Let's run ArduPilot in another pane as stated in [here](../navio-ardupilot/installation-and-running/#autostarting-ardupilot-on-boot) pointing telemetry to **127.0.0.1:14650**
 by modifying ```/etc/default/ardupilot```:
@@ -128,11 +129,11 @@ pi@navio: ~ $ sudo systemctl restart ardupilot
 
 Continue <a href="https://asciinema.org/a/1i915k6h2b0i9sf02mwom7qu8?t=1:14" target="_blank">watching the tutorial</a> for this step.
 
-#### Running a GCS
+### Running a GCS
 
 [Launch](../navio-ardupilot/installation-and-running/#connecting-to-the-gcs) your GCS (Ground Control Station) of choice. On the next step you'll understand why.
 
-#### Running mavros node
+### Running mavros node
 
 As we've already discussed within the ROS package we are working with an executable files called nodes. Each ROS node contains specific functions and uses a ROS client library to communicate with other nodes. For example, we will run [mavros](http://wiki.ros.org/mavros) which makes it easy to access sensor data from ArduPilot. Moreover according to the scheme from the overview, mavros will become a udp bridge to Ground Control Station we've launched on previous step.
 
@@ -159,7 +160,7 @@ Finally after everything's set you'll see something like this:
 
 Continue <a href="https://asciinema.org/a/1i915k6h2b0i9sf02mwom7qu8?t=2:52" target="_blank">watching the tutorial</a> for this step.
 
-#### Running rostopic
+### Running rostopic
 
 ``rostopic`` tools allows you to get information about ROS topics.
 
@@ -185,5 +186,5 @@ After typing *rostopic echo /mavros/* you can press TAB to see the list of exist
 
 Continue <a href="https://asciinema.org/a/1i915k6h2b0i9sf02mwom7qu8?t=4:01" target="_blank">watching the tutorial</a> for this step.
 
-
-You always can look more thoroughly on [ROS wiki](http://wiki.ros.org/) to get a better understanding of its concepts.
+!!! tip
+    You always can look more thoroughly on [ROS wiki](http://wiki.ros.org/) to get a better understanding of its concepts.

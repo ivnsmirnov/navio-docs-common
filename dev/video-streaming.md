@@ -1,13 +1,13 @@
-#### Video Streaming with Navio2
+## Video Streaming with Navio2
 
 Streaming real-time video from a drone powered by a Raspberry Pi 2 has never been easier.  There is only a handful of actions that you need to make to get a drone streaming real-time video to a remote PC, tablet, phone or whatnot.
 
-#### Hardware
+## Hardware
 
 This instructions are for Raspberry Pi Camera Module.
 Please note that Raspberry Pi Camera Module emits a lot of RF noise which may affect GPS performance. To workaround that wrap Camera Module and its cable using tape and alumnium\copper foil (use tape to keep foil from short curcuiting Camera Module pcb).
 
-#### Raspberry PI2
+## Raspberry PI2
 
 First things first. You need to _expand filesystem_ and _enable camera_ using Raspberry Pi configuration tool. Type the following command in console:
 ```bash
@@ -17,7 +17,7 @@ Raspi-config menu will appear on your screen. After changing the options press t
 
 After the installation has completed you can choose whatever platform you want to stream FPV to.
 
-#### Ubuntu
+## Ubuntu
 
 If you're going to stream to a Ubuntu PC, install the some packages locally beforehand.
 ```bash
@@ -25,7 +25,7 @@ user@ubuntu: ~ $ sudo apt-get update
 user@ubuntu: ~ $ sudo apt-get install gstreamer1.0-tools gstreamer1.0-plugins-good gstreamer1.0-plugins-bad
 ```
 
-#### Android
+## Android
 
 * Download and install [QGroundControl](https://play.google.com/store/apps/details?id=org.mavlink.qgroundcontrol) for Android.
 
@@ -42,7 +42,7 @@ user@ubuntu: ~ $ sudo apt-get install gstreamer1.0-tools gstreamer1.0-plugins-go
 Here's the app in action
 ![capture](img/qgc-app-video.jpg)
 
-#### Mac OS X
+## Mac OS X
 
 The simplest way is to use brew. To install it run the following in your Mac terminal:
 
@@ -52,15 +52,15 @@ user@mac: ~ $ brew update
 user@mac: ~ $ brew install gstreamer gst-libav gst-plugins-ugly gst-plugins-base gst-plugins-bad gst-plugins-good
 ```
 
-#### Windows
+## Windows
 
 Download and install [gstreamer for Windows](http://gstreamer.freedesktop.org/data/pkg/windows/1.4.5/gstreamer-1.0-x86_64-1.4.5.msi).
 
-#### Launching
+## Launching
 
 Now everything is ready for streaming.
 
-***On your computer***
+### On your computer
 
 For Ubuntu/Mac OS X:
 ```bash
@@ -73,7 +73,7 @@ gst-launch-1.0 -v udpsrc port=9000 caps="application/x-rtp, media=(string)video,
 ```
 From now on, your computer will be waiting for the input stream from Raspberry PI2. Once it gets a stream, you'll see the real-time video from your drone.
 
-***On Raspberry***
+### On Raspberry
 
 ```bash
 pi@navio: ~ raspivid -n -w 1280 -h 720 -b 1000000 -fps 15 -t 0 -o - | gst-launch-1.0 -v fdsrc ! h264parse ! rtph264pay config-interval=10 pt=96 ! udpsink host=<remote_ip> port=9000

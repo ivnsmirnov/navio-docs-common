@@ -14,7 +14,7 @@ All following text is provided by the project author.
 
 ----------
 
-##Project
+## Project
 
 In 2015 Microsoft announced official support for the Raspberry Pi 2 running Windows 10 on their new "IoT" (Internet of Things) platform. Soon after work started on an open source SDK for Navio with the following goals:
 
@@ -25,12 +25,12 @@ In 2015 Microsoft announced official support for the Raspberry Pi 2 running Wind
 This document describes how to develop your own code for Navio running on Windows 10 IoT, or just try-out the test and sample apps for yourself. You can follow the progress at the [Emlid forum thread](http://community.emlid.com/t/windows-10-iot-image-for-navio/381/last) or the [Hackster.io project](https://www.hackster.io/team-code-for-robots/navio-sdk-for-windows-iot). If you like it please "respect" the Hackster project to return some kudos to the creator ;-)
 
 
-##Getting Started
+## Getting Started
 
 This section describes how to start development by installing Windows IoT on your device, Visual Studio on your PC, then finally how to clone, build and run the code.
 
 
-###Tools
+### Tools
 
 Links to download the development tools and basic instructions what to install are provided by Microsoft here:
 
@@ -47,14 +47,14 @@ Since device driver source code has been added to the solution, you will also ne
 [Driver Kit Downloads](https://msdn.microsoft.com/en-US/windows/hardware/dn913721%28v=vs.8.5%29.aspx?f=255&MSPPError=-2147217396)
 
 
-##Development
+## Development
 
 The current Navio SDK "framework" is a Windows Universal library, so can be consumed by any Windows Universal application written in any .NET language supported by IoT. Simply use the NuGet Package Manager of Visual Studio to add the [Emlid.WindowsIot.Hardware](https://www.nuget.org/packages/Emlid.WindowsIoT.Hardware) package, then write some code with the various Navio*Device classes to utilize the hardware.
 
 Deployment is easy with the Visual Studio produced Windows Universal packages. They are precompiled and load directly onto the IoT device. You can deploy them via Visual Studio during development, via the web interface for end users, script them with PowerShell or include them on a preloaded SD card image.
 
 
-###Preparation
+### Preparation
 
 It is strongly recommended you complete some basic training before attempting to build and deploy your first IoT project. Even experienced Windows developers will have to get to grips with some of the special build and deployment requirements for the ARM processor and remote IoT device connections. Also the IoT system is still under early development, even though the desktop Windows 10 builds are finished.
 
@@ -66,7 +66,7 @@ Update the GitHub extension (menu "Tools - Extensions and Updates...").
  5. Select the "Online" tab, search for then install the "Productivity Power Tools 2015" extension.
 
 
-###Building the SDK from Source
+### Building the SDK from Source
 
 1. Click "Team Explorer" then the "Plug" icon (manage connections).
 2. Under "Local Git Repositories" click the "Clone" link then enter the URL of the GitHub project "[https://github.com/emlid/Navio-SDK-Windows-IoT](https://github.com/emlid/Navio-SDK-Windows-IoT)", choose a local path into which the files will be downloaded then the "Clone" button.
@@ -82,7 +82,7 @@ Update the GitHub extension (menu "Tools - Extensions and Updates...").
 7. Some NuGet packages may be loaded, then the build will start and should complete without any errors.
 
 
-###Build and Run the Hardware Test App
+### Build and Run the Hardware Test App
 
 The Hardware Test app is currently only distributed as source. Later it will also be available for stand-alone use (without any development tools).
 
@@ -97,7 +97,7 @@ The Hardware Test app is currently only distributed as source. Later it will als
 9. Click "Close" then "Exit" to finish.
 
 
-###Build and Run the Samples
+### Build and Run the Samples
 
 Currently the sample applications are "Background Application" projects, which means they run directly from Visual Studio with no UI. All output is sent back via debug messages to the Visual Studio "Output" window.
 

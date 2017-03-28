@@ -1,8 +1,8 @@
-**RGB LED**
+## RGB LED
 
 If you haven't already done that, download drivers and examples code [here](navio-repository-cloning/).
 
-***C++***
+### C++
 
 Move to the folder with the source code, compile and run the example
 ```bash
@@ -10,7 +10,7 @@ cd C++/Examples/LED2
 make
 sudo ./LED
 ```
-***Python***
+### Python
 
 Move to the folder with the code and run the example:
 ```bash
