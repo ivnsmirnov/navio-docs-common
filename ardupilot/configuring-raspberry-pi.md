@@ -2,7 +2,7 @@
 
 Navio requires a preconfigured Raspbian to run. We provide a unified SD card image for Raspberry Pi 2 and 3. The OS is headless, i.e. it comes without GUI as it is not required for drone applications.
 
-[Emlid Raspbian Image](http://files.emlid.com/images/emlid-raspbian-20170323.img.xz), [(md5)](https://files.emlid.com/images/MD5SUMS)
+[Download emlid-raspbian-20170323 SD card image](http://files.emlid.com/images/emlid-raspbian-20170323.img.xz), [(md5)](https://files.emlid.com/images/MD5SUMS)
 
 ## Writing image to SD card
 
@@ -17,9 +17,9 @@ More detailed instructions are available [here](http://www.raspberrypi.org/docum
 
 ## Configuring Wi-Fi access
 
-Raspberry Pi3 has an internal Wi-Fi module, while Raspberry Pi2 requires an external USB Wi-Fi dongle. An extensive list of supported dongles is available [here](http://elinux.org/RPi_USB_Wi-Fi_Adapters).
+Raspberry Pi3 has an internal Wi-Fi module, while Raspberry Pi 2 requires an external USB Wi-Fi dongle. An extensive list of supported dongles is available [here](http://elinux.org/RPi_USB_Wi-Fi_Adapters).
 
-Wi-Fi networks can be configured by editing the /boot/wpa_supplicant.conf file located on SD card. To add your network simply add the following lines to it:
+Wi-Fi networks can be configured by editing the wpa_supplicant.conf file located on SD card (/boot partition). To add your network simply add the following lines to it:
 
 ```bash
 network={
@@ -33,7 +33,7 @@ To get access to this file use one of the following methods:
 
 ### Edit configuration on SD card
 
-Simply plug an SD card in your computer. After getting access to SD card contents, open /boot/wpa_supplicant.conf (with root privileges on Linux) and edit the file as described above.
+Simply plug an SD card in your computer. After getting access to SD card contents, open wpa_supplicant.conf located on /boot partition (with root privileges on Linux) and edit the file as described above.
 
 ### Use monitor and keyboard
 
@@ -46,7 +46,7 @@ sudo nano /boot/wpa_supplicant.conf
 Modify the file as described above, save it and reboot.
 This method may be problematic because some keyboards are not compatible with this kernel. If your keyboard does not work, try another one or use another method.
 
-### Use ethernet
+### Use Ethernet
 
 You can connect to Raspberry Pi over Ethernet by plugging it using Ethernet cable to a switch, router or directly to your computer.
 
