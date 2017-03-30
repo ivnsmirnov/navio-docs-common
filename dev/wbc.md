@@ -2,6 +2,9 @@
 
 Emlid Raspbian images comes with pre-installed WBC.
 
+!!! danger
+    It's an experimental feature. Please test it on ground before lifting off.
+
 ### What is Wi-Fi broadcast?
 
 Wifibroadcast is a project aimed at the live transmission of HD video (and other) data using wifi radios.
@@ -35,13 +38,15 @@ not fully supported by many wifi chipsets.
 
 #### 2.4GHz
 
-ATHEROS AR9172 delivers good performance under wifibroadcast for 2.4GHz.
+!!! warning
+    2.4Ghz is used by RC and hence should be used with caution. Please, verify that your RC transmitter doesn't interfere with Wi-Fi broadcast-enabled dongles. Consider using 5Ghz dongles to eliminate risks altogether.
+
 Recommended dongles:
 
 * TP-LINK TL-WN722N
 * Alfa AWUS036NHA
 
-You can find a list of wifi cards using  this chip [here](https://wikidevi.com/wiki/Atheros_AR9271).
+You can find a list of wifi cards using this chip [here](https://wikidevi.com/wiki/Atheros_AR9271).
 
 #### 5GHz
 
